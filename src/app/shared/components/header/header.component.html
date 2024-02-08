@@ -1,0 +1,33 @@
+<div class="bg-primary w-full h-14 flex flex-row">
+    <div class="w-full flex flex-row items-center justify-around p-1">
+        @if (mobile()) {
+        <div class="flex flex-row items-center">
+            <span class="material-symbols-outlined">
+                menu
+            </span>
+        </div>
+        }
+        <input type="text" placeholder="Type here" class="app-input" />
+        <div class="flex flex-row items-center cursor-pointer space-x-2">
+            <span class="material-symbols-outlined">
+                account_circle
+            </span>
+            <span>Login</span>
+        </div>
+        <div class="flex flex-row items-center cursor-pointer space-x-2">
+            <span class="material-symbols-outlined">
+                shopping_cart
+            </span>
+            @if(!mobile()) {
+            <span>Cart</span>
+            }
+        </div>
+        @if(!mobile()) {
+        <div class="flex flex-row items-center">
+            <span class="material-symbols-outlined">
+                more_vert
+            </span>
+        </div>
+        }
+    </div>
+</div>

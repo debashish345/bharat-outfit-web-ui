@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.app-input {
+    background-color: azure;
+    height: 2em;
+    border-radius: .4em;
+    outline-offset: .2em;
+    min-width: 40%;
+    max-width: 20em;
+    width: 60%;
+    text-align: center;
+}
