@@ -1,0 +1,16 @@
+.animated-div {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  animation: open-close .4s ease-in-out;
+  /* Run the moveLeft animation for 1 second */
+}
+
+@keyframes open-close {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

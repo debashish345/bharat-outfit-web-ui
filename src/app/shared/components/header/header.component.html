@@ -1,7 +1,10 @@
+@if (showLeftSideMenu()) {
+<app-left-side-nav (toggleLeftSizeMenu)="closeLeftSideMenuEvent($event)"></app-left-side-nav>
+}
 <div class="bg-primary w-full h-14 flex flex-row">
     <div class="w-full flex flex-row items-center justify-around p-1">
         @if (mobile()) {
-        <div class="flex flex-row items-center">
+        <div class="flex flex-row items-center" (click)="openLeftSideMenu()">
             <span class="material-symbols-outlined">
                 menu
             </span>
