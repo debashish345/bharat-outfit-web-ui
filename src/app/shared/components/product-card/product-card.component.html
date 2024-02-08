@@ -1,0 +1,18 @@
+<div class="relative w-fit mx-1 my-2 overflow-hidden rounded-lg border-gray-600" 
+style="border: 2px solid rgba(179, 179, 179, 0.516); width: 160px;">
+    <a href="#">
+        <img style="width: 10em; height: 10em;" class="rounded-lg object-cover" src="{{product.url}}"
+            alt="{{product.name}}" />
+    </a>
+    <span
+        class="absolute top-0 left-0 w-28 translate-y-4 -translate-x-6 -rotate-45 bg-black text-center text-sm text-white">{{product.tag}}</span>
+    <div class="mt-4 px-2 pb-5">
+        <h5 class="text-xl font-semibold tracking-tight text-slate-900 truncate">{{product.name}}</h5>
+        <div class="flex flex-col items-start">
+            <p>
+                <span class="text-lg font-normal text-green-600">₹ {{product.price}}</span>&nbsp;
+                <span class="text-sm text-slate-900 opacity-60 line-through">₹ {{product.raw_price}}</span>
+            </p>
+        </div>
+    </div>
+</div>

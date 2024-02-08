@@ -1,1 +1,8 @@
-<p>slider works!</p>
+<div class="w-full text-center my-2 overflow-x-scroll app-scrollbar whitespace-nowrap">
+    @for (item of items(); track item.id) {
+    <div [style.max-width]="maxImgSize" 
+        class="mx-2 my-1 inline-block overflow-hidden text-white bg-clip-border rounded-xl bg-blue-gray-500">
+        <img [style.width]="imgSize" src="{{item.url}}" alt="card-image" />
+    </div>
+    }
+</div>

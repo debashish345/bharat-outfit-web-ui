@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, Signal } from '@angular/core';
+import { Category } from '../../models/category';
 
 @Component({
   selector: 'app-slider',
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './slider.component.scss'
 })
 export class SliderComponent {
+
+  @Input() items!: Signal<any[]>;
+  @Input() imgSize!: string;
+  @Input() maxImgSize!: string;
 
 }

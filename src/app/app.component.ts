@@ -4,6 +4,7 @@ import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { DeviceService } from './shared/services/device.service';
+import { FooterComponent } from './shared/components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +12,9 @@ import { DeviceService } from './shared/services/device.service';
   standalone: true,
   imports: [
     CommonModule,
+    RouterModule,
     HeaderComponent,
-    RouterModule
+    FooterComponent,
   ],
   providers: [
     DeviceService
