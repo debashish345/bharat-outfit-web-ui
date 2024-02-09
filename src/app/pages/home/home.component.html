@@ -1,23 +1,21 @@
 <div>
-    <app-slider [items]="categoryList" [imgSize]="'5em'" [maxImgSize]="'10em'"></app-slider>
-    <app-slider [items]="bannerList" [imgSize]="'100%'" [maxImgSize]="'30em'"></app-slider>
-
+    <app-slider [items]="homePageBService.homePageBuilderState.bannerState.banners" [imgSize]="'5em'" [maxImgSize]="'10em'"></app-slider>
+    <app-slider [items]="homePageBService.homePageBuilderState.bannerState.banners" [imgSize]="'100%'" [maxImgSize]="'30em'"></app-slider>
     <!-- New Arrivals start -->
     <div>
         <div class="w-full p-3 text-2xl font-semibold">
-            <div class="inline-block">New Arrivals</div>
-            <span class="float-right cursor-pointer material-symbols-outlined ">
+            <div class="inline-block" >New Arrivals</div>
+            <span class="float-right cursor-pointer material-symbols-outlined "  [routerLink]="['list']">
                 chevron_right
             </span>
         </div>
         <div class="flex flex-row justify-center flex-wrap">
-            @for (product of newProductList(); track product.id) {
+            @for (product of homePageBService.homePageBuilderState.productState.products(); track product.id) {
             <app-product-card [product]="product"></app-product-card>
             }
         </div>
     </div>
     <!-- New Arrivals end -->
-
 
     <!-- Popular Products start -->
     <div>
@@ -28,7 +26,7 @@
             </span>
         </div>
         <div class="flex flex-row justify-start app-scrollbar" [ngStyle]="{'overflow-x': overflow()}">
-            @for (product of newProductList(); track product.id) {
+            @for (product of homePageBService.homePageBuilderState.productState.products(); track product.id) {
             <app-product-card [product]="product"></app-product-card>
             }
         </div>

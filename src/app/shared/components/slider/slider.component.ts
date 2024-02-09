@@ -1,4 +1,4 @@
-import { Component, Input, Signal } from '@angular/core';
+import { Component, Input, Signal, WritableSignal } from '@angular/core';
 import { Category } from '../../models/category';
 
 @Component({
@@ -10,7 +10,7 @@ import { Category } from '../../models/category';
 })
 export class SliderComponent {
 
-  @Input() items!: Signal<any[]>;
+  @Input() items!: Signal<any>;
   @Input() imgSize!: string;
   @Input() maxImgSize!: string;
 
