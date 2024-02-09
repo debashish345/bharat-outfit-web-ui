@@ -1,18 +1,40 @@
-<div class="relative w-fit mx-1 my-2 overflow-hidden rounded-lg border-gray-600" 
-style="border: 2px solid rgba(179, 179, 179, 0.516); width: 160px;">
+<div class="relative w-fit mx-1 my-2 overflow-hidden rounded-lg border-gray-600"
+    style="border: 2px solid rgba(179, 179, 179, 0.516); width: 250px;">
     <a href="#">
-        <img style="width: 10em; height: 10em;" class="rounded-lg object-cover" src="{{product.url}}"
-            alt="{{product.name}}" />
+        <img style="height: 16em;" class="rounded-lg object-cover" src="http://dummyimage.com/400x180.png/dddddd/000000"
+            alt="product image" />
     </a>
+
     <span
-        class="absolute top-0 left-0 w-28 translate-y-4 -translate-x-6 -rotate-45 bg-black text-center text-sm text-white">{{product.tag}}</span>
-    <div class="mt-4 px-2 pb-5">
-        <h5 class="text-xl font-semibold tracking-tight text-slate-900 truncate">{{product.name}}</h5>
-        <div class="flex flex-col items-start">
-            <p>
-                <span class="text-lg font-normal text-green-600">₹ {{product.price}}</span>&nbsp;
-                <span class="text-sm text-slate-900 opacity-60 line-through">₹ {{product.raw_price}}</span>
+        class="p-1 m-2 rounded-md absolute top-0 left-0 w-fit bg-black text-center text-sm text-white">
+        TREND
+    </span>
+    <div class="absolute top-0 right-0 bg-yellow-300 rounded-full shadow-md m-2 cursor-pointer">
+        <img width="35px" src="./../../../../assets/iocns/film-reel-cinema-svg.svg">
+    </div>
+
+    <div class="mt-4 px-2 pb-2">
+        <h5 class="text-xl font-semibold tracking-tight text-slate-900 truncate">SAFARI</h5>
+        <h2 class="text-gray-400 text-sm truncate">Medium 30 L Laptop Backback for all genders</h2>
+
+        <div class="flex flex-row items-center space-x-2 align-middle ">
+            <p class="text-green-600 font-bold">26% off</p>
+            <p class="flex flex-row space-x-1 items-center">
+                <span class="text-sm font-semibold text-slate-900 opacity-60 line-through">₹ 750</span>
+                <span class="text-lg font-bold text-gray-600">₹ 250</span>&nbsp;
             </p>
         </div>
+    </div>
+
+    <div class="flex flex-row space-x-1 px-2 pb-5">
+        @for (rate of getRating(); track rate.id) {
+        <img width="15px" src="./../../../../assets/iocns/star-sharp-svg.svg" />
+        }
+    </div>
+
+    <div class="pl-2 flex flex-row space-x-3 items-center align-middle justify-start">
+        <img class="cursor-pointer" width="25px" src="./../../../../assets/iocns/amazon-icon-svg.svg">
+        <img class="cursor-pointer" width="25px" src="./../../../../assets/iocns/flipkart-logo-icon-svg.svg">
+        <img class="cursor-pointer" width="80px" src="./../../../../assets/iocns/meesho-icon.jpg">
     </div>
 </div>

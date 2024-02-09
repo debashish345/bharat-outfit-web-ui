@@ -16,7 +16,7 @@ export class ProductCardComponent {
   @Input() product!: Product;
 
   getRating()  {
-    return Array(Math.round(this.product.rating)).fill(0);
+    return Array(Math.round(5)).fill(0);
   }
 
 }
