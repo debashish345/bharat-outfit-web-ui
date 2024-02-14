@@ -1,4 +1,4 @@
-import { Injectable, Signal, computed } from '@angular/core';
+import { Injectable, Signal, WritableSignal, computed, signal } from '@angular/core';
 import { DeviceService } from './device.service';
 
 @Injectable({
@@ -8,8 +8,13 @@ export class AppUiService {
 
   private device: Signal<Boolean> = this.deviceService.device;
 
+  readonly sortFilterSignal: WritableSignal<Boolean> = signal<Boolean>(false);
+
   constructor(
     private deviceService: DeviceService
-  ) {
-   }
+  ) { }
+
+  public toggleSortFilterSignal(): void {
+    this.sortFilterSignal.update(val => !val);
+  }
 }
