@@ -3,6 +3,7 @@ import { AllFilterComponent } from 'src/app/shared/components/all-filter/all-fil
 import { ProductCardComponent } from 'src/app/shared/components/product-card/product-card.component';
 import { SortFilterComponent } from 'src/app/shared/components/sort-filter/sort-filter.component';
 import { AppUiService } from 'src/app/shared/services/app-ui.service';
+import { DeviceService } from 'src/app/shared/services/device.service';
 
 @Component({
   selector: 'app-product-list',
@@ -15,6 +16,7 @@ import { AppUiService } from 'src/app/shared/services/app-ui.service';
 export class ProductListComponent {
 
   constructor(
+    readonly device: DeviceService,
     readonly appUiService: AppUiService
   ) {}
 

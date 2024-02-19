@@ -1,0 +1,10 @@
+.left-filter-desktop{
+    width: 24em;
+}
+.product-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    row-gap: .6em;
+    column-gap: .2em;
+}
