@@ -9,7 +9,7 @@
                 chevron_right
             </span>
         </div>
-        <div class="flex flex-row justify-center flex-wrap">
+        <div [ngClass]="{'product-container-mobile' : deviceService.device(), 'product-container-desktop' : !deviceService.device(),}">
             @for (product of homePageBService.homePageBuilderState.productState.products(); track product.id) {
             <app-product-card [product]="product"></app-product-card>
             }

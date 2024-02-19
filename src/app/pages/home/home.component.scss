@@ -1,0 +1,15 @@
+.product-container-mobile {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    column-gap: .2em;
+    justify-content: start;
+}
+
+.product-container-desktop {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: .2em;
+    justify-content: center;
+}

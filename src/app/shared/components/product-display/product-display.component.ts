@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { DeviceService } from '../../services/device.service';
 
 
 interface Image {
@@ -17,7 +18,7 @@ interface Image {
 })
 export class ProductDisplayComponent {
 
-  constructor() { }
+  constructor(readonly device: DeviceService) { }
 
   images: Image[] = [
     { url: 'http://dummyimage.com/400x620.png/dddddd/000000', alt: 'Image 1' },

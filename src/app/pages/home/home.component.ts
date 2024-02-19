@@ -22,7 +22,7 @@ export class HomeComponent {
 
   constructor(
     public homePageBService: HomePageBuilderService,
-    private deviceService: DeviceService
+    readonly deviceService: DeviceService
     ) {
     this.mobile = this.deviceService.device;
   }

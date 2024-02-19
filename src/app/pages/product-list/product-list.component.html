@@ -23,27 +23,19 @@
         </div>
     </div>
     }
-    <div class="flex flex-row p-4">
+    <div class="flex flex-row mt-6">
         @if (!device.device()) {
         <app-all-filter class="mr-2 border-r-2 left-filter-desktop"></app-all-filter>
         }
-        <div class="product-container">
+        <div [ngClass]="{'product-container-mobile' : device.device(), 'product-container-desktop' : !device.device(),}">
             <app-product-card [routerLink]="['.', '1234']"></app-product-card>
-            <app-product-card></app-product-card>
-            <app-product-card></app-product-card>
-            <app-product-card></app-product-card>
-            <app-product-card></app-product-card>
-            <app-product-card></app-product-card>
-            <app-product-card></app-product-card>
-            <app-product-card></app-product-card>
-            <app-product-card></app-product-card>
-            <app-product-card></app-product-card>
-            <app-product-card></app-product-card>
-            <app-product-card></app-product-card>
-            <app-product-card></app-product-card>
-            <app-product-card></app-product-card>
-            <app-product-card></app-product-card>
-            <app-product-card></app-product-card>
+            <app-product-card [routerLink]="['.', '1234']"></app-product-card>
+            <app-product-card [routerLink]="['.', '1234']"></app-product-card>
+            <app-product-card [routerLink]="['.', '1234']"></app-product-card>
+            <app-product-card [routerLink]="['.', '1234']"></app-product-card>
+            <app-product-card [routerLink]="['.', '1234']"></app-product-card>
+            <app-product-card [routerLink]="['.', '1234']"></app-product-card>
+            <app-product-card [routerLink]="['.', '1234']"></app-product-card>
         </div>
     </div>
 </div>
