@@ -2,7 +2,10 @@
 <app-sort-filter></app-sort-filter>
 }
 
-<div class="h-full w-full" [style]="{'filter': appUiService.sortFilterSignal() ? 'blur(2px)' : ''}">
+@if (appUiService.allFilterSignal()) {
+<app-all-filter></app-all-filter>
+}
+<div class="h-full w-full">
     <div class="p-2 h-full w-full flex flex-row justify-between align-middle">
         <div class="flex flex-row justify-center w-full space-x-2" (click)="appUiService.toggleSortFilterSignal()">
             <span class="material-symbols-outlined">
@@ -10,7 +13,8 @@
             </span>
             <span class="font-semibold">Sort</span>
         </div>
-        <div class="flex flex-row justify-center w-full space-x-2">
+        <div class="flex flex-row justify-center w-full space-x-2" (click)="appUiService.toggleAllFilterSignal()">
+
             <span class="material-symbols-outlined">
                 filter_alt
             </span>

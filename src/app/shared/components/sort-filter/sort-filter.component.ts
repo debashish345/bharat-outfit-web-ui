@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppUiService } from '../../services/app-ui.service';
 
 @Component({
   selector: 'app-sort-filter',
@@ -9,4 +10,5 @@ import { Component } from '@angular/core';
 })
 export class SortFilterComponent {
 
+  constructor(readonly appUiService: AppUiService){}
 }

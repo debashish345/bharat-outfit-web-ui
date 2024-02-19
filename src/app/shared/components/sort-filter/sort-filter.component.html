@@ -1,21 +1,20 @@
 <div class="fixed bg-white w-full flex flex-col space-y-2 rounded-md shadow-xl font-semibold"
-style="z-index: 1; padding: 10px; bottom: 0px;"
->
+    style="z-index: 1; padding: 10px; bottom: 0px;">
     <div class="flex flex-row justify-between">
         <p>Relevance</p>
         <input type="radio" name="sort_btn">
     </div>
-    
+
     <div class="flex flex-row justify-between">
         <p>Popularity</p>
         <input type="radio" name="sort_btn">
     </div>
-    
+
     <div class="flex flex-row justify-between">
         <p>Discount</p>
         <input type="radio" name="sort_btn">
     </div>
-    
+
     <div class="flex flex-row justify-between">
         <p>Price : Low to High</p>
         <input type="radio" name="sort_btn">
@@ -25,4 +24,8 @@ style="z-index: 1; padding: 10px; bottom: 0px;"
         <p>Price : High to Low</p>
         <input type="radio" name="sort_btn">
     </div>
+
+    <span class="material-symbols-outlined self-end p-2 m-2 rounded-full border-2" (click)="appUiService.toggleSortFilterSignal()">
+        close
+    </span>
 </div>

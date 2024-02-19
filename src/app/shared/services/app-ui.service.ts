@@ -9,6 +9,7 @@ export class AppUiService {
   private device: Signal<Boolean> = this.deviceService.device;
 
   readonly sortFilterSignal: WritableSignal<Boolean> = signal<Boolean>(false);
+  readonly allFilterSignal: WritableSignal<Boolean> = signal<Boolean>(false);
 
   constructor(
     private deviceService: DeviceService
@@ -16,5 +17,9 @@ export class AppUiService {
 
   public toggleSortFilterSignal(): void {
     this.sortFilterSignal.update(val => !val);
+  }
+
+  public toggleAllFilterSignal(): void {
+    this.allFilterSignal.update(val => !val);
   }
 }
