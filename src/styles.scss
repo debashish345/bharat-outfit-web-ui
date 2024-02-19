@@ -34,7 +34,7 @@
 .button-13 {
   background-color: #fff;
   border: 1px solid #d5d9d9;
-  border-radius: 8px;
+  border-radius: 4px;
   box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
   box-sizing: border-box;
   color: #0f1111;
@@ -51,7 +51,7 @@
   -webkit-user-select: none;
   touch-action: manipulation;
   vertical-align: middle;
-  width: 100px;
+  width: fit-content;
 }
 
 .button-13:hover {

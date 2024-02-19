@@ -1,0 +1,57 @@
+<div class="fixed flex flex-row w-full bottom-0" style="z-index: 1;">
+    <div class="px-2 py-2 font-semibold text-xl text-center bg-gray-50 w-full">Add to cart</div>
+    <div class="px-2 py-2 font-semibold text-xl text-center bg-green-400 w-full">Buy Now</div>
+</div>
+<div class="flex flex-col">
+    <img style="max-width: 420px;" [src]="images[currentIndex].url" alt="Slide {{images[currentIndex]}}">
+    <div class="flex flex-row">
+        @for (thumbnail of images; track thumbnail) {
+        <div class="h-10 w-10 overflow-hidden border-2 m-1" (click)="showImage($index)">
+            <img [src]="thumbnail.url">
+        </div>
+        }
+    </div>
+</div>
+<div class="flex flex-col space-y-2 m-2">
+    <div class="font-bold text-2xl h-16 overflow-x-scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Quidem at fuga</div>
+    <div class="flex flex-row justify-start items-center space-x-2">
+        <div class="text-green-500 font-bold text-xl">70% off</div>
+        <div class="text-gray-500 text-base line-through opacity-90"> ₹ 1299</div>
+        <div class="text-gray-800 font-bold text-2xl">₹ 389</div>
+    </div>
+    <div class="pb-2 flex flex-row justify-start space-x-2">
+        @for (color of ['red', 'blue', 'black']; track color) {
+        <div [style.background-color]="color" class="h-8 w-8 rounded-full border-2 border-gray-700"></div>
+        }
+    </div>
+
+
+    <div class="pb-2 flex flex-row justify-start space-x-2">
+        @for (size of ['XS', 'S', 'M', 'L', 'XL']; track size) {
+        <div class="h-8 w-8 p-1 font-semibold text-white text-center rounded-full bg-slate-800">{{size}}</div>
+        }
+    </div>
+
+    <div class="pb-2 flex flex-row space-x-2">
+        <input type="number" class="app-input border-2">
+        <div class="button-13">Check</div>
+    </div>
+    <div>
+        <p class="font-bold mb-2">Highlights</p>
+        <div class="flex flex-row flex-wrap">
+            @for (hl of ['100% cotton', 'Regual Fit', 'Short Sleeve', 'Long last']; track hl) {
+            <div class="px-2 py-1 m-1 bg-slate-300 text-black text-center rounded-md">{{hl}}</div>
+            }
+        </div>
+    </div>
+    
+    <div>
+        <p class="font-bold mb-2">Product details</p>
+        <div class="flex flex-col space-y-1">
+            @for (hl of ['100% cotton', 'Regual Fit', 'Shiort Sleeve']; track hl) {
+            <div>{{hl}}</div>
+            }
+        </div>
+    </div>
+</div>

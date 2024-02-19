@@ -1,4 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router, RouterLink, RouterModule } from '@angular/router';
 import { AllFilterComponent } from 'src/app/shared/components/all-filter/all-filter.component';
 import { ProductCardComponent } from 'src/app/shared/components/product-card/product-card.component';
 import { SortFilterComponent } from 'src/app/shared/components/sort-filter/sort-filter.component';
@@ -8,7 +10,9 @@ import { DeviceService } from 'src/app/shared/services/device.service';
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [ProductCardComponent, SortFilterComponent, AllFilterComponent],
+  imports: [
+    CommonModule,
+    RouterModule, RouterLink,ProductCardComponent, SortFilterComponent, AllFilterComponent],
   providers: [],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.scss'
