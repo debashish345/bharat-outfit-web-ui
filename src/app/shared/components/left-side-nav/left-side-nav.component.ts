@@ -1,11 +1,12 @@
 import { Component, EventEmitter, Input, Output, Signal, computed, signal } from '@angular/core';
 import { HomePageBuilderService } from '../../services/home-page-builder.service';
 import { Banner } from '../../models/banner';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-left-side-nav',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   providers: [HomePageBuilderService],
   templateUrl: './left-side-nav.component.html',
   styleUrl: './left-side-nav.component.scss'

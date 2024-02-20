@@ -1,0 +1,47 @@
+@if (device.device()) {
+<div class="p-2 font-semibold text-center bg-red-500 fixed bottom-0 w-full">Logout</div>
+}
+<div [ngClass]="{'account-desktop': !device.device()}" class="">
+    <div class="border m-2">
+        <div class="flex flex-row justify-start space-x-2 font-semibold p-4" [routerLink]="['profile']"
+            (click)="openDialog()">
+            <span class="material-symbols-outlined">
+                person_edit
+            </span>
+            <div>Edit profile</div>
+        </div>
+        <div class="flex flex-row justify-start space-x-2 font-semibold p-4" [routerLink]="['address']"
+            (click)="openDialog()">
+            <span class="material-symbols-outlined">
+                apartment
+            </span>
+            <div>Edit address</div>
+        </div>
+        <div class="flex flex-row justify-start space-x-2 font-semibold p-4" [routerLink]="['payment']"
+            (click)="openDialog()">
+            <span class="material-symbols-outlined">
+                credit_card
+            </span>
+            <div>Payment details</div>
+        </div>
+        <div class="flex flex-row justify-start space-x-2 font-semibold p-4" [routerLink]="['order']"
+            (click)="openDialog()">
+            <span class="material-symbols-outlined">
+                quick_reorder
+            </span>
+            <div>Orders</div>
+        </div>
+    </div>
+    @if (device.device() && isDialogActive()) {
+    <div class="absolute right-0 top-0 m-4 rounded-full" style="z-index: 10;" (click)="closeDialog()">
+        <span class="material-symbols-outlined">
+            cancel
+        </span>
+    </div>
+    }
+    @if (isDialogActive()) {
+    <div class="border m-2" [ngClass]="{'account-dialog': device.device()}">
+        <router-outlet></router-outlet>
+    </div>
+    }
+</div>

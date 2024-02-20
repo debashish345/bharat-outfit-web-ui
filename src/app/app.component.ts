@@ -26,7 +26,7 @@ export class AppComponent {
 
   size!: Signal<Boolean>;
 
-  constructor(private deviceService: DeviceService){
+  constructor(readonly deviceService: DeviceService){
     this.size = this.deviceService.device;
   }
 }
