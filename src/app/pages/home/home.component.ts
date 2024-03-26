@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 import { Component, Signal, computed } from '@angular/core';
-import { Router, RouterLink, RouterModule, provideRouter } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink, RouterModule, provideRouter } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 import { FooterComponent } from 'src/app/shared/components/footer/footer.component';
 import { ProductCardComponent } from 'src/app/shared/components/product-card/product-card.component';
 import { SliderComponent } from 'src/app/shared/components/slider/slider.component';
@@ -17,12 +19,16 @@ import { HomePageBuilderService } from 'src/app/shared/services/home-page-builde
 })
 export class HomeComponent {
 
+
+
   mobile!: Signal<Boolean>;
   overflow: Signal<string> = computed(() => this.deviceService.device() ? 'scroll' : 'hidden');
+  response: string = 'no response'
 
   constructor(
     public homePageBService: HomePageBuilderService,
-    readonly deviceService: DeviceService
+    readonly deviceService: DeviceService,
+    readonly _http: HttpClient
     ) {
     this.mobile = this.deviceService.device;
   }

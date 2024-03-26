@@ -7,10 +7,14 @@ import { ProfileDialogComponent } from "./shared/dialogs/profile-dialog/profile-
 import { AddressDialogComponent } from "./shared/dialogs/address-dialog/address-dialog.component";
 import { OrderDialogComponent } from "./shared/dialogs/order-dialog/order-dialog.component";
 import { PaymentDialogComponent } from "./shared/dialogs/payment-dialog/payment-dialog.component";
+import { CallbackComponent } from "./shared/components/callback/callback.component";
 
 export const APP_ROUTE: Route[] = [
     {
         path: '', component: HomeComponent
+    },
+    {
+        path: 'callback', component: CallbackComponent
     },
     {
         path: 'product', component: ProductListComponent
