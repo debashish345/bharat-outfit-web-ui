@@ -4,6 +4,7 @@ import { DeviceService } from '../../services/device.service';
 import { LeftSideNavComponent } from '../left-side-nav/left-side-nav.component';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -19,7 +20,9 @@ export class HeaderComponent {
   toggleLeftSideMenu: EventEmitter<Boolean> = new EventEmitter<Boolean>(false);
   showLeftSideMenu: Signal<Boolean> = toSignal(this.toggleLeftSideMenu, { initialValue: false });
 
-  constructor(private deviceService: DeviceService) {
+  constructor(
+    private deviceService: DeviceService,
+    readonly authService: AuthService) {
     this.mobile = this.deviceService.device;
   }
 

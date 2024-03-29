@@ -9,7 +9,7 @@
             <ul class="flex flex-col py-4 space-y-1 justify-between h-full">
                 <ul>
                     <li [routerLink]="['/account']">
-                        <a 
+                        <a
                             class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <span class="material-symbols-outlined">
@@ -74,25 +74,29 @@
                         </a>
                     </li>
                 </ul>
+
                 <ul>
-                    <li class="p-2">
-                        <div class="w-full p-2 bg-green-500 text-center rounded-md font-semibold">Login & Signup</div>
-                    </li>
-                    <li class="p-2 flex flex-row space-x-2 justify-center">
-                        <a (click)="googleSigin()" class="cursor-pointer">
-                            <img class="h-10 w-10 border-2 rounded-full p-1 shadow-inner"
-                                src="./../../../../assets/iocns/google-plus-icon-svg.svg" />
-                        </a>
-                        <img class="h-10 w-10 border-2 rounded-full p-2 shadow-inner"
-                            src="./../../../../assets/iocns/facebook-icon-svg.svg" />
-                    </li>
-                    <li
-                        class="bg-red-500 m-2 p-2 rounded-md font-semibold flex flex-row justify-center align-middle space-x-2">
-                        <span class="material-symbols-outlined">
-                            logout
-                        </span>
-                        <span class="ml-2 text-sm tracking-wide truncate ">Logout</span>
-                    </li>
+                    @if (!this.authService.userAuthState.userState.isLoggedIn()) {
+                        <li class="p-2">
+                            <div class="w-full p-2 bg-green-500 text-center rounded-md font-semibold">Login & Signup</div>
+                        </li>
+                        <li class="p-2 flex flex-row space-x-2 justify-center">
+                            <a (click)="googleSigin()" class="cursor-pointer">
+                                <img class="h-10 w-10 border-2 rounded-full p-1 shadow-inner"
+                                    src="./../../../../assets/iocns/google-plus-icon-svg.svg" />
+                            </a>
+                            <img class="h-10 w-10 border-2 rounded-full p-2 shadow-inner"
+                                src="./../../../../assets/iocns/facebook-icon-svg.svg" />
+                        </li>
+                    } @else {
+                        <li
+                            class="bg-red-500 m-2 p-2 rounded-md font-semibold flex flex-row justify-center align-middle space-x-2">
+                            <span class="material-symbols-outlined">
+                                logout
+                            </span>
+                            <span class="ml-2 text-sm tracking-wide truncate ">Logout</span>
+                        </li>
+                    }
                 </ul>
                 <!-- <span class="material-symbols-outlined bottom-0 pr-4 sticky float-right"
                     (click)="closeLeftSideNavBar()">

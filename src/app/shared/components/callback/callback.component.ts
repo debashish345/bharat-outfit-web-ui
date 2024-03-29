@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { AuthApiService } from '../../services/api/auth-api.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-callback',
@@ -12,20 +13,13 @@ import { AuthApiService } from '../../services/api/auth-api.service';
 })
 export class CallbackComponent {
   
-  private readonly GOOGLE_TOKEN_ENDPOINT = 'http://localhost:8080/login/oauth2/code/google';
-
   constructor(
-    private authApiService: AuthApiService,
+    private authService: AuthService,
     private route: ActivatedRoute) {
     
     this.route.queryParams.subscribe(params => {
-      
-      this.authApiService.getOauth2Token(this.GOOGLE_TOKEN_ENDPOINT, params['code'], params['state']).subscribe(
-        (res:any) => {
-          
-        }
-      )
-    })
+      this.authService.setOauth2Token(params['code'], params['state']);
+    });
   }
 
 }
