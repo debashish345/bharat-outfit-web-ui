@@ -1,3 +1,5 @@
+import { environment } from "src/environments/environment.development";
+
 export class AppConstant {
 
     /* localstorage constant */
@@ -8,5 +10,7 @@ export class AppConstant {
     public static readonly REGISTER_PATH = 'register';
 
     /* Auth URLs */
-    public static readonly GOOGLE_AUTHORIZATION_ENDPOINT = "http://localhost:8080/oauth2/authorization/google";
+    public static readonly GOOGLE_AUTHORIZATION_ENDPOINT = `${environment.baseUrl}/oauth2/authorization/google`;
+    
+    public static readonly GOOGLE_TOKEN_ENDPOINT = `${environment.baseUrl}/login/oauth2/code/google`;
 }
