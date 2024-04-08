@@ -21,6 +21,10 @@ export class AuthService {
     private authApiService: AuthApiService) {
   }
 
+  initiateGoogleLogin(): void {
+    window.location.href = AppConstant.GOOGLE_AUTHORIZATION_ENDPOINT;
+  }
+
   setOauth2Token(code: string, state: string): void {
     this.authApiService.getOauth2Token(code, state).subscribe(
       (res:ApiResponse<AppToken>) => {

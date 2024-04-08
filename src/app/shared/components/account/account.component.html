@@ -1,47 +1,66 @@
-@if (device.device()) {
+@if (deviceService.device()) {
 <div class="p-2 font-semibold text-center bg-red-500 fixed bottom-0 w-full">Logout</div>
 }
-<div [ngClass]="{'account-desktop': !device.device()}" class="">
+<!-- <div [ngClass]="{'account-desktop': !device.device()}" class="">
+
+    @if (!device.device()) {
+    <div class="flex-grow">sas</div>
+    }
+</div> -->
+
+@if (deviceService.device()) {
+<div class="flex flex-row justify-start">
+    <ng-container [ngTemplateOutlet]="accountTemplate"></ng-container>
+    <div class="flex-grow">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+} @else {
+<div class="flex flex-row justify-center">
+    <ng-container [ngTemplateOutlet]="accountTemplate" [ngTemplateOutletContext]="{isMobile: this.deviceService.device}"></ng-container>
+    <div class="flex-grow">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+}
+
+<ng-template #accountTemplate let-isMobile="isMobile">
     <div class="border m-2">
-        <div class="flex flex-row justify-start space-x-2 font-semibold p-4" [routerLink]="['profile']"
+        <div class="flex flex-row justify-start space-x-2 font-semibold p-4" [routerLink]="['./']"
             (click)="openDialog()">
             <span class="material-symbols-outlined">
                 person_edit
             </span>
-            <div>Edit profile</div>
+            @if (isMobile) {
+                <div >Edit profile</div>
+            }
         </div>
-        <div class="flex flex-row justify-start space-x-2 font-semibold p-4" [routerLink]="['address']"
+        <div class="flex flex-row justify-start space-x-2 font-semibold p-4" [routerLink]="['./address']"
             (click)="openDialog()">
             <span class="material-symbols-outlined">
                 apartment
             </span>
-            <div>Edit address</div>
+            @if (isMobile) {
+                <div>Edit address</div>
+            }
         </div>
-        <div class="flex flex-row justify-start space-x-2 font-semibold p-4" [routerLink]="['payment']"
+        <div class="flex flex-row justify-start space-x-2 font-semibold p-4" [routerLink]="['./payment']"
             (click)="openDialog()">
             <span class="material-symbols-outlined">
                 credit_card
             </span>
-            <div>Payment details</div>
+            @if (isMobile) {
+                <div>Payment details</div>
+            }
         </div>
-        <div class="flex flex-row justify-start space-x-2 font-semibold p-4" [routerLink]="['order']"
+        <div class="flex flex-row justify-start space-x-2 font-semibold p-4" [routerLink]="['./order']"
             (click)="openDialog()">
             <span class="material-symbols-outlined">
                 quick_reorder
             </span>
-            <div>Orders</div>
+            @if (isMobile) {
+                <div>Orders</div>
+            }
         </div>
     </div>
-    @if (device.device() && isDialogActive()) {
-    <div class="absolute right-0 top-0 m-4 rounded-full" style="z-index: 10;" (click)="closeDialog()">
-        <span class="material-symbols-outlined">
-            cancel
-        </span>
-    </div>
-    }
-    @if (isDialogActive()) {
-    <div class="border m-2" [ngClass]="{'account-dialog': device.device()}">
-        <router-outlet></router-outlet>
-    </div>
-    }
-</div>
+</ng-template>

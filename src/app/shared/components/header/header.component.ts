@@ -5,11 +5,12 @@ import { LeftSideNavComponent } from '../left-side-nav/left-side-nav.component';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { AuthService } from '../../services/auth.service';
+import { RouterOutlet, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, LeftSideNavComponent],
+  imports: [CommonModule, RouterOutlet, RouterLink, LeftSideNavComponent],
   providers: [DeviceService],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProfileDialogComponent } from './profile-dialog.component';
+import { BreadcrumbComponent } from './breadcrumb.component';
 
-describe('ProfileDialogComponent', () => {
-  let component: ProfileDialogComponent;
-  let fixture: ComponentFixture<ProfileDialogComponent>;
+describe('BreadcrumbComponent', () => {
+  let component: BreadcrumbComponent;
+  let fixture: ComponentFixture<BreadcrumbComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ProfileDialogComponent]
+      imports: [BreadcrumbComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ProfileDialogComponent);
+    fixture = TestBed.createComponent(BreadcrumbComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

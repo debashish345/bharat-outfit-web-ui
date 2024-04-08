@@ -12,7 +12,8 @@
         }
         <input type="text" placeholder="Type here" class="app-input" />
         @if (!this.authService.userAuthState.userState.isLoggedIn()) {
-            <div class="flex flex-row items-center cursor-pointer space-x-2">
+            <div class="flex flex-row items-center cursor-pointer space-x-2"
+            [routerLink]="['login']">
                 <span class="material-symbols-outlined">
                     account_circle
                 </span>

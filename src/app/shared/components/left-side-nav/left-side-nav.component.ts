@@ -18,12 +18,6 @@ import { AppToken } from '../../models/app-token';
 })
 export class LeftSideNavComponent {
 
-  private readonly GOOGLE_AUTHORIZATION_ENDPOINT = "http://localhost:8080/oauth2/authorization/google"
-
-  googleSigin() {
-    window.location.href = this.GOOGLE_AUTHORIZATION_ENDPOINT;
-  }
-
   @Output() toggleLeftSizeMenu = new EventEmitter<Boolean>(false);
 
   constructor(
