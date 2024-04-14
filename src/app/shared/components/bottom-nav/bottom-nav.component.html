@@ -1,0 +1,35 @@
+<nav class="flex flex-row justify-evenly bg-slate-100 self-center">
+    <button class=" p-2" [class.active]="selectedOption === 'home'" (click)="selectOption('home')">
+            <span class="material-symbols-outlined align-middle p-1">
+                home
+                </span>
+                @if (selectedOption == 'home') {
+                    <span class="align-middle font-semibold">Home</span>
+                }
+    </button>
+    <button class=" p-2" [class.active]="selectedOption === 'account'" (click)="selectOption('account')">
+        <span class="material-symbols-outlined align-middle p-1">
+            account_circle
+            </span>
+            @if (selectedOption == 'account') {
+        <span class="align-middle font-semibold">Account</span>
+            }
+    </button>
+    <button class=" p-2" [class.active]="selectedOption === 'orders'" (click)="selectOption('orders')">
+        <span class="material-symbols-outlined align-middle p-1">
+            local_shipping
+            </span>
+            @if (selectedOption == 'orders') {
+        <span class="align-middle font-semibold">Orders</span>
+            }
+    </button>
+    <button class=" p-2 align-middle" [class.active]="selectedOption === 'notifications'"
+        (click)="selectOption('notifications')">
+        <span class="material-symbols-outlined align-middle p-1">
+            notifications
+            </span>
+            @if (selectedOption == 'notifications') {
+                <span class="align-middle font-semibold">Notifications</span>
+            }
+    </button>
+</nav>

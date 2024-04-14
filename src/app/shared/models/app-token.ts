@@ -3,7 +3,11 @@ export class AppToken {
     refreshToken: string = '';
     isActive: boolean = false;
 
-    constructor(accessToken: string, refreshToken: string, isActive: boolean) {}
+    constructor(accessToken: string, refreshToken: string, isActive: boolean) {
+        this.accessToken = accessToken;
+        this.refreshToken = refreshToken
+        this.isActive = isActive;
+    }
 }
 
 

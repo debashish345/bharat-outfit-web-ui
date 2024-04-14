@@ -9,7 +9,7 @@ export class AuthState {
     user: Signal<User> = signal<User>({});
     appToken: WritableSignal<AppToken> = signal<AppToken>(new AppToken('', '', false));
     isLoggedIn: Signal<boolean> = computed(() => {
-        return !!LocalStorageUtil.getItem<AppToken>(AppConstant.ACCESS_TOKEN) && LocalStorageUtil.getItem<AppToken>(AppConstant.ACCESS_TOKEN).accessToken.length > 0;
+        return !!LocalStorageUtil.getItem<AppToken>(AppConstant.AUTHORIZATION_TOKEN) && LocalStorageUtil.getItem<AppToken>(AppConstant.AUTHORIZATION_TOKEN).accessToken.length > 0;
       });
   
 }

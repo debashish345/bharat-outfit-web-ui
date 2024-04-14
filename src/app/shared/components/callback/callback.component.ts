@@ -19,9 +19,14 @@ export class CallbackComponent {
     private router: Router) {
     
     this.route.queryParams.subscribe(params => {
-      this.authService.setOauth2Token(params['code'], params['state']);
+      this.authService.setOauth2Token(params['appToken']);
+      this.handleRedirection();
     });
-    this.router.navigateByUrl('');
   }
-
+  
+  handleRedirection(): void {
+    this.router.navigateByUrl('account')
+  }
 }
+
+

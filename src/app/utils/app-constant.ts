@@ -3,7 +3,7 @@ import { environment } from "src/environments/environment.development";
 export class AppConstant {
 
     /* localstorage constant */
-    public static readonly ACCESS_TOKEN = 'access_token';
+    public static readonly AUTHORIZATION_TOKEN = 'authorization_token';
 
     /* routes constant */
     public static readonly LOGIN_PATH = 'login';

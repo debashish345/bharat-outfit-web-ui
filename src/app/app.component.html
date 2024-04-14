@@ -2,4 +2,8 @@
     <router-outlet></router-outlet>
 @if (!deviceService.device()) {
     <app-footer></app-footer>
+} @else {
+    <div class="fixed bottom-0 w-screen">
+        <app-bottom-nav></app-bottom-nav>
+    </div>
 }

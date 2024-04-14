@@ -25,13 +25,11 @@ export class AuthService {
     window.location.href = AppConstant.GOOGLE_AUTHORIZATION_ENDPOINT;
   }
 
-  setOauth2Token(code: string, state: string): void {
-    this.authApiService.getOauth2Token(code, state).subscribe(
-      (res:ApiResponse<AppToken>) => {
-        this.userAuthState.userState.appToken?.set(res.body.data);
-        LocalStorageUtil.setItem<AppToken>(AppConstant.ACCESS_TOKEN, res.body.data);
-      }
-    )
+  setOauth2Token(appToken: string): void {
+    const appAuthorizationToken = new AppToken(appToken, '', true);
+    console.log('appToken', appToken)
+    this.userAuthState.userState.appToken?.set(appAuthorizationToken);
+    LocalStorageUtil.setItem<AppToken>(AppConstant.AUTHORIZATION_TOKEN, appAuthorizationToken);
   }
 
 }

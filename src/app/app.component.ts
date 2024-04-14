@@ -5,6 +5,7 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { DeviceService } from './shared/services/device.service';
 import { FooterComponent } from './shared/components/footer/footer.component';
+import { BottomNavComponent } from './shared/components/bottom-nav/bottom-nav.component';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
     RouterModule,
     HeaderComponent,
     FooterComponent,
+    BottomNavComponent
   ],
   providers: [
     DeviceService
